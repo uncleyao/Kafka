@@ -17,7 +17,9 @@ public class KafkaConsumerAssignApp {
         props.put("value.deserializer","org.apache.kafka.common.serialization.StringDeserializer");
         props.put("group.id","test");
 
+        // 创建消费者对象
         KafkaConsumer myConsumer = new KafkaConsumer(props);
+
 
         ArrayList<TopicPartition> partitions = new ArrayList<TopicPartition>();
         TopicPartition myTopicPart0 = new TopicPartition("my-topic", 0);

@@ -24,6 +24,8 @@ public class KafkaConsumerSubscriberApp {
             while (true) {
 
                 ConsumerRecords<String, String> records = myConsumer.poll(10);
+
+                //增强for循环的底层是迭代
                 for (ConsumerRecord<String, String> record : records) {
                     System.out.println(String.format("topics: %s, Partition: %d, key: %s, Value: %s",
                             record.topic(),record.partition(),record.offset(), record.key(), record.value()));
